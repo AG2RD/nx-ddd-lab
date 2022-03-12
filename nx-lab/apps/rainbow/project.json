@@ -1,0 +1,91 @@
+{
+  "projectType": "application",
+  "root": "apps/rainbow",
+  "sourceRoot": "apps/rainbow/src",
+  "prefix": "nx-lab",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/rainbow",
+        "index": "apps/rainbow/src/index.html",
+        "main": "apps/rainbow/src/main.ts",
+        "polyfills": "apps/rainbow/src/polyfills.ts",
+        "tsConfig": "apps/rainbow/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": ["apps/rainbow/src/favicon.ico", "apps/rainbow/src/assets"],
+        "styles": ["apps/rainbow/src/styles.scss"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/rainbow/src/environments/environment.ts",
+              "with": "apps/rainbow/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "rainbow:build:production"
+        },
+        "development": {
+          "browserTarget": "rainbow:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "rainbow:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/rainbow/src/**/*.ts",
+          "apps/rainbow/src/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/rainbow"],
+      "options": {
+        "jestConfig": "apps/rainbow/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": ["domain:rainbow", "type:app"]
+}

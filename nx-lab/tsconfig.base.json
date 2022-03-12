@@ -15,7 +15,17 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@nx-lab/api-interfaces": ["libs/api-interfaces/src/index.ts"]
+      "@nx-lab/api-interfaces": ["libs/api-interfaces/src/index.ts"],
+      "@nx-lab/rainbow/api": ["libs/rainbow/api/src/index.ts"],
+      "@nx-lab/rainbow/api-api": ["libs/rainbow/api-api/src/index.ts"],
+      "@nx-lab/rainbow/domain": ["libs/rainbow/domain/src/index.ts"],
+      "@nx-lab/rainbow/feature-search": [
+        "libs/rainbow/feature-search/src/index.ts"
+      ],
+      "@nx-lab/rainbow/ui-dumbrac": ["libs/rainbow/ui-dumbrac/src/index.ts"],
+      "@nx-lab/rainbow/util-bricabrac": [
+        "libs/rainbow/util-bricabrac/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

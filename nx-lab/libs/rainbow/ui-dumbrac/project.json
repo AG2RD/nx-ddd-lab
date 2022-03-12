@@ -1,0 +1,42 @@
+{
+  "projectType": "library",
+  "root": "libs/rainbow/ui-dumbrac",
+  "sourceRoot": "libs/rainbow/ui-dumbrac/src",
+  "prefix": "dumbrac",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:ng-packagr-lite",
+      "outputs": ["dist/libs/rainbow/ui-dumbrac"],
+      "options": {
+        "project": "libs/rainbow/ui-dumbrac/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/rainbow/ui-dumbrac/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/rainbow/ui-dumbrac/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/rainbow/ui-dumbrac"],
+      "options": {
+        "jestConfig": "libs/rainbow/ui-dumbrac/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/rainbow/ui-dumbrac/src/**/*.ts",
+          "libs/rainbow/ui-dumbrac/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["domain:rainbow", "type:ui"]
+}

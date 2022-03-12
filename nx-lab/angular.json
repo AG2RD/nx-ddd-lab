@@ -4,6 +4,13 @@
     "api": "apps/api",
     "api-interfaces": "libs/api-interfaces",
     "labo-test": "apps/labo-test",
-    "labo-test-e2e": "apps/labo-test-e2e"
+    "labo-test-e2e": "apps/labo-test-e2e",
+    "rainbow": "apps/rainbow",
+    "rainbow-api": "libs/rainbow/api",
+    "rainbow-domain": "libs/rainbow/domain",
+    "rainbow-e2e": "apps/rainbow-e2e",
+    "rainbow-feature-search": "libs/rainbow/feature-search",
+    "rainbow-ui-dumbrac": "libs/rainbow/ui-dumbrac",
+    "rainbow-util-bricabrac": "libs/rainbow/util-bricabrac"
   }
 }

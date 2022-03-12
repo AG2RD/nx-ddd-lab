@@ -1,0 +1,42 @@
+{
+  "projectType": "library",
+  "root": "libs/rainbow/util-bricabrac",
+  "sourceRoot": "libs/rainbow/util-bricabrac/src",
+  "prefix": "bricabrac",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:ng-packagr-lite",
+      "outputs": ["dist/libs/rainbow/util-bricabrac"],
+      "options": {
+        "project": "libs/rainbow/util-bricabrac/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/rainbow/util-bricabrac/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/rainbow/util-bricabrac/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/rainbow/util-bricabrac"],
+      "options": {
+        "jestConfig": "libs/rainbow/util-bricabrac/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/rainbow/util-bricabrac/src/**/*.ts",
+          "libs/rainbow/util-bricabrac/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["domain:rainbow", "type:util"]
+}

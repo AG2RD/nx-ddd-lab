@@ -1,0 +1,42 @@
+{
+  "projectType": "library",
+  "root": "libs/rainbow/feature-search",
+  "sourceRoot": "libs/rainbow/feature-search/src",
+  "prefix": "rainbow",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:ng-packagr-lite",
+      "outputs": ["dist/libs/rainbow/feature-search"],
+      "options": {
+        "project": "libs/rainbow/feature-search/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/rainbow/feature-search/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/rainbow/feature-search/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/rainbow/feature-search"],
+      "options": {
+        "jestConfig": "libs/rainbow/feature-search/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/rainbow/feature-search/src/**/*.ts",
+          "libs/rainbow/feature-search/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["domain:rainbow", "type:feature"]
+}

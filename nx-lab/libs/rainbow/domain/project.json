@@ -1,0 +1,42 @@
+{
+  "projectType": "library",
+  "root": "libs/rainbow/domain",
+  "sourceRoot": "libs/rainbow/domain/src",
+  "prefix": "rainbow",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:ng-packagr-lite",
+      "outputs": ["dist/libs/rainbow/domain"],
+      "options": {
+        "project": "libs/rainbow/domain/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/rainbow/domain/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/rainbow/domain/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/rainbow/domain"],
+      "options": {
+        "jestConfig": "libs/rainbow/domain/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/rainbow/domain/src/**/*.ts",
+          "libs/rainbow/domain/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["domain:rainbow", "type:domain-logic"]
+}

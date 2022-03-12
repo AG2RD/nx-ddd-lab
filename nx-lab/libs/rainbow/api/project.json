@@ -1,0 +1,42 @@
+{
+  "projectType": "library",
+  "root": "libs/rainbow/api",
+  "sourceRoot": "libs/rainbow/api/src",
+  "prefix": "nx-lab",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:ng-packagr-lite",
+      "outputs": ["dist/libs/rainbow/api"],
+      "options": {
+        "project": "libs/rainbow/api/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/rainbow/api/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/rainbow/api/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/rainbow/api"],
+      "options": {
+        "jestConfig": "libs/rainbow/api/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/rainbow/api/src/**/*.ts",
+          "libs/rainbow/api/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["domain:rainbow", "domain:rainbow/api", "type:api"]
+}

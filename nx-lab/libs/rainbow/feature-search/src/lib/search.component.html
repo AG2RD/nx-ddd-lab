@@ -1,0 +1,9 @@
+<h1>rainbow-search</h1>
+
+<table class="table">
+  <tr *ngFor="let emma of emmaList$ | async">
+    <td>{{ emma.id }}</td>
+    <td>{{ emma.name }}</td>
+    <td>{{ emma.description }}</td>
+  </tr>
+</table>

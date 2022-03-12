@@ -1,0 +1,28 @@
+{
+  "root": "apps/rainbow-e2e",
+  "sourceRoot": "apps/rainbow-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/rainbow-e2e/cypress.json",
+        "devServerTarget": "rainbow:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "rainbow:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/rainbow-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["rainbow"]
+}
