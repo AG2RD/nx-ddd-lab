@@ -1,14 +1,15 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppComponent } from './app.component';
-import { NxWelcomeComponent } from './nx-welcome.component';
+import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { environment } from '../environments/environment';
-import { EffectsModule } from '@ngrx/effects';
+import { RainbowUiDumbracModule } from '@nx-lab/rainbow/api';
 import { RainbowFeatureSearchModule } from '@nx-lab/rainbow/feature-search';
-import { HttpClientModule } from '@angular/common/http';
+
+import { environment } from '../environments/environment';
+import { AppComponent } from './app.component';
+import { NxWelcomeComponent } from './nx-welcome.component';
 
 @NgModule({
   declarations: [AppComponent, NxWelcomeComponent],
@@ -19,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
     EffectsModule.forRoot(),
     RainbowFeatureSearchModule,
     HttpClientModule,
+    RainbowUiDumbracModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,1 +1,1 @@
-export * from './lib/rainbow-api.module';
+export { RainbowUiDumbracModule } from '@nx-lab/rainbow/ui-dumbrac';
