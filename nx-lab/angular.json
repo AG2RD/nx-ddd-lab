@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "projects": {
+    "api": "apps/api",
+    "api-interfaces": "libs/api-interfaces",
+    "labo-test": "apps/labo-test",
+    "labo-test-e2e": "apps/labo-test-e2e"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "root": "apps/labo-test-e2e",
+  "sourceRoot": "apps/labo-test-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/labo-test-e2e/cypress.json",
+        "devServerTarget": "labo-test:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "labo-test:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/labo-test-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["labo-test"]
+}
